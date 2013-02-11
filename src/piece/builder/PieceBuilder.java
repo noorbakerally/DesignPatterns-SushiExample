@@ -12,6 +12,7 @@ import piece.Roll;
 public abstract class PieceBuilder {
 	protected Piece piece;
 	protected List <Ingredient> ingredientList;
+	protected PieceBuilder successor;
 	public PieceBuilder(List <Ingredient> ingredientList){
 		this.ingredientList = ingredientList;
 	}
@@ -19,6 +20,7 @@ public abstract class PieceBuilder {
 	public Piece getPiece(){
 		return piece;
 	}
+
 	abstract public void selectIngredient();
 	abstract public void mixIngredient();
 	abstract public Piece buildPiece();
