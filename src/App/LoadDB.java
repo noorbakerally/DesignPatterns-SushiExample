@@ -20,8 +20,8 @@ import org.xml.sax.SAXException;
 
 public class LoadDB {
 	Document db;
-	List <Ingredient> ingredientList = new ArrayList <Ingredient> ();
-	List <Ingredient> sauceList = new ArrayList <Ingredient> ();
+	public List <Ingredient> ingredientList = new ArrayList <Ingredient> ();
+	public List <Ingredient> sauceList = new ArrayList <Ingredient> ();
 	
 	public LoadDB() throws ParserConfigurationException, SAXException, IOException{
 		File fXmlFile = new File("info/Plates.xml");

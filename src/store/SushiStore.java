@@ -63,8 +63,8 @@ public abstract class SushiStore {
 			int pieceChoice;
 			
 			System.out.println();
-			pieceChoice = ChoiceDisplay.getChoice("SELECT TYPE OF PIECE "+ (pieceCounter+1),
-					new ArrayList <String> (){{add("Roll");add("Hand Roll(Cone)");add("Base with Topping");}});
+			pieceChoice = Integer.valueOf(ChoiceDisplay.getChoices("SELECT TYPE OF PIECE "+ (pieceCounter+1),
+					new ArrayList <String> (){{add("Roll");add("Hand Roll(Cone)");add("Base with Topping");}}));
 			
 			//pieceChoice=1;
 			System.out.println();
@@ -79,8 +79,8 @@ public abstract class SushiStore {
 		}
 	}
 	
-	public void getDetails(){
-		System.out.println(plate.toString());
+	public String getDetails(){
+		return plate.toString();
 	}
 	
 
