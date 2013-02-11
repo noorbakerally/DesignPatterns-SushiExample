@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sushidetails>
+	<plates>
+		<!-- In description, V:Vegeterian, S:ShellFish, D:Dairy -->
+		<!-- Rolls Plate -->
+		<plate name="Avocado Maki" color="green" structure="Roll" numberOfPieces="4" ingredientIds="3,4,5,7" />
+		<plate name="Tuna Maki" color="violet" structure="Roll" numberOfPieces="4" ingredientIds="6,8"/>
+
+		<!-- Hand Rolls Plate having cones -->
+		<plate name="Vegetable Hand Roll" color="violet" structure="Cone" numberOfPieces="1" ingredientIds="9,4,5,10,7"/>
+	
+		<!-- Base Topping Plate having cones -->
+		<plate name="Tuna Nigri" color="violet" structure="BaseTopping" numberOfPieces="2" ingredientIds="6,8"/>
+	</plates>
+	
+	
+	<ingredients>
+		<ingredient id="1" name="Rice" description="V" pricePerUnit="0.7" presence="IOB" region="J"/>
+		<ingredient	id="2" name="Vinegar" description="V"  pricePerUnit="0.2" presence="IS" region="J"/>
+		<!-- 
+		<ingredient	id="3" name="kera" description="V" pricePerUnit="0.4" />
+		 -->
+		<ingredient id="4" name="Mayonnaise" description="VD" pricePerUnit="0.3" presence="IS" region="JW"/>
+		
+		<ingredient id="6" name="Tuna" description="S" pricePerUnit="0.8" presence="IBT" region="JW"/>
+		<ingredient id="7" name="Nori" description="V"  pricePerUnit="0.3" presence="IO" region="JW"/>
+		<ingredient id="8" name="Wasabi" description="V" pricePerUnit="0.2" presence="IT" region="JW"/>
+		<ingredient id="9" name="Cucumber" description="V" pricePerUnit="0.3" presence="IT" region="JW"/>
+		<ingredient id="10" name="SoyaBean" description="V" pricePerUnit="0.4" presence="IOB" region="JW"/>
+		
+		<ingredient id="11" name="JapTea" description="V" pricePerUnit="0.4" presence="IOB" isSauce="true" region="J"/>
+		<ingredient id="12" name="WestWine" description="V" pricePerUnit="0.4" presence="IOB" isSauce="true" region="W" />
+		<ingredient id="5" composite="true" name="Sushi Rice" description="1#1,2#1" presence="IOB" region="JW"/>
+		<!-- description for composite id#unitOfThisIngredientUsed -->
+	</ingredients>
+	<colors>
+		<color name="green" price="1.8"/>
+		<color name="blue" price="2.4"/>
+		<color name="violet" price="3"/>
+		<color name="orange" price="3.5"/>
+		<color name="pink" price="4"/>
+		<color name="grey" price="5"/>
+	</colors>
+</sushidetails>
