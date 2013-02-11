@@ -53,6 +53,8 @@ public class RollBuilder extends PieceBuilder{
 
 	@Override
 	public Piece buildPiece() {
+		selectIngredient();
+		mixIngredient();
 		return roll;
 	}
 

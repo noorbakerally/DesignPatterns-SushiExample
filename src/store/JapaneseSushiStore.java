@@ -14,7 +14,6 @@ public class JapaneseSushiStore extends SushiStore{
 		super(ingredientList, baseSauceList);
 		// TODO Auto-generated constructor stub
 	}
-
 	@Override
 	public Plate createPlate() {
 		// TODO Auto-generated method stub

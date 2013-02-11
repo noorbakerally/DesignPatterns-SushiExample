@@ -40,6 +40,8 @@ public class BaseToppingBuilder extends PieceBuilder{
 	@Override
 	public Piece buildPiece() {
 		// TODO Auto-generated method stub
+		selectIngredient();
+		mixIngredient();
 		return baseTopping;
 	}
 	@Override

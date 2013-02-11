@@ -47,6 +47,8 @@ public class ConeBuilder extends PieceBuilder{
 	@Override
 	public Piece buildPiece() {
 		// TODO Auto-generated method stub
+		selectIngredient();
+		mixIngredient();
 		return cone;
 	}
 

@@ -22,24 +22,18 @@ public abstract class Ingredient {
 	public String toString(){
 		return name;
 	}
-	
-	
 	public Ingredient(int id,String ingredientName,boolean isVegeterian,boolean isShellFish,boolean isDairy,String presence){
 		this.id = id;this.name = ingredientName; this.isVegeterian = isVegeterian;
 		this.presence = presence;
 	}
-	
 	public boolean getIsVegeterian(){
 		return isVegeterian;
 	}
-	
 	public Ingredient(int id, String ingredientName) {
 		// TODO Auto-generated constructor stub
 		this.id = id;
 		this.name = ingredientName;
 	}
-
-	
 	public void setPresence(String presence){
 		this.presence =  presence;
 	}
@@ -70,5 +64,4 @@ public abstract class Ingredient {
 	public String getName(){
 		return name;
 	}
-	
 }
