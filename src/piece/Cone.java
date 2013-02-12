@@ -11,7 +11,10 @@ public class Cone extends Piece{
 	List <Ingredient> inside = new ArrayList <Ingredient> ();
 	List <Ingredient> outside = new ArrayList <Ingredient> ();
 	public Cone(List<Ingredient> inside,List<Ingredient> outside) {
-		// TODO Auto-generated constructor stub
+		this.inside = inside;
+		this.outside = outside;
+		allPricedIngredients.addAll(inside);
+		allPricedIngredients.addAll(outside);
 	}
 	@Override
 	public String toString() {

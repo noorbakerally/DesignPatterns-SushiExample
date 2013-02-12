@@ -35,15 +35,12 @@ public class MainController {
 		void showPlate(Plate plate);
 		String[] getIngredient(String ingredientTypeTitle,List <String> ingredient);
 	}
-
 	public MainController(View view) throws ParserConfigurationException, SAXException, IOException{
 		db = new DB();
 		this.view = view;
 		handler = createPieceControlChain();
 		launch();
-		
 	}
-	
 	void launch(){
 		plateFranchise = view.getPlateFranchise();
 		sushiStore = SimpleStoreFactory.createSushiStore(plateFranchise, db.sauceList);
