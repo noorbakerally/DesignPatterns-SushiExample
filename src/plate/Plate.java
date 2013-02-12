@@ -35,7 +35,9 @@ public abstract class Plate {
 		
 		public float getDefaultPrice(){
 			float currentDefaultPrice = 0;
-			
+			for (Piece piece:pieces){
+				currentDefaultPrice += piece.getPrice();
+			}
 			return currentDefaultPrice;
 		}
 		public abstract float getPrice();

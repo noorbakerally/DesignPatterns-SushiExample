@@ -28,13 +28,13 @@ public class JapanesePlate extends Plate {
 			objStr += currentSauce.toString()+" ";
 		}
 		objStr += "\n";
-		objStr += "Vegeterian:"+(isVegeterian()? "Plate is Vegeterian":"Plate is not Vegeterian");
+		objStr += "Vegeterian:"+(isVegeterian()? "Plate is Vegeterian\n":"Plate is not Vegeterian\n");
+		objStr += "Price:£"+getPrice()+"\n";
 		return objStr;
 	}
 
 	@Override
 	public float getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return getDefaultPrice();
 	}
 }

@@ -38,9 +38,4 @@ public class Cone extends Piece{
 		vegeterian = vegeterian && helpers.checkVegeterian(outside);
 		return vegeterian;
 	}
-	@Override
-	public float getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
