@@ -1,13 +1,13 @@
 package store;
+import java.util.List;
 
-import App.LoadDB;
-
+import ingredient.*;
 public class SimpleStoreFactory {
-	public static SushiStore createSushiStore(int plateFranchise,LoadDB loadDB){
+	public static SushiStore createSushiStore(int plateFranchise,List <Ingredient> sauceList){
 		if (plateFranchise == 1){
-			return new JapaneseSushiStore(loadDB.ingredientList,loadDB.sauceList);
+			return new JapaneseSushiStore(sauceList);
 		} else {
-			return new WesternSushiStore(loadDB.ingredientList,loadDB.sauceList);
+			return new WesternSushiStore(sauceList);
 		}
 	}
 }

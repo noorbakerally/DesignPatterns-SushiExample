@@ -1,7 +1,7 @@
 package App;
 import java.util.List;
 import java.util.Scanner;
-public class ChoiceDisplay {
+public class ViewChoice {
 	
 	public static String getChoices(String title,List <String> choices){
 		String mainChoice = null; 

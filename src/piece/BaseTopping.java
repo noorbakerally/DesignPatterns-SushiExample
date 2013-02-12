@@ -10,31 +10,24 @@ import javax.jws.Oneway;
 import App.helpers;
 
 public class BaseTopping extends Piece {
-	List <Ingredient> hasBase = new ArrayList <Ingredient> ();
-	List <Ingredient> hasTopping = new ArrayList <Ingredient> ();
+	List <Ingredient> base = new ArrayList <Ingredient> ();
+	List <Ingredient> topping = new ArrayList <Ingredient> ();
 	
-	public List<Ingredient> getHasBase() {
-		return hasBase;
+	public BaseTopping(List<Ingredient> base,	List<Ingredient> topping) {
+		this.base = base;
+		this.topping = topping;
 	}
-	public void setHasBase(List<Ingredient> hasBase) {
-		this.hasBase = hasBase;
-	}
-	public List<Ingredient> getHasTopping() {
-		return hasTopping;
-	}
-	public void setHasTopping(List<Ingredient> hasTopping) {
-		this.hasTopping = hasTopping;
-	}
+	
 	@Override
 	public String  toString() {
 		String objStr = "\n";
 		objStr += "TYPE: BASE with Topping\n";
 		objStr +="Base Ingredient:";
-		for (Ingredient currentIngredient:hasBase){
+		for (Ingredient currentIngredient:base){
 			objStr +=currentIngredient.getName()+" ";
 		}
 		objStr +="\nTopping Ingredient:";
-		for (Ingredient currentIngredient:hasTopping){
+		for (Ingredient currentIngredient:topping){
 			objStr +=currentIngredient.getName()+" ";
 		}
 		return objStr;
@@ -43,8 +36,8 @@ public class BaseTopping extends Piece {
 	@Override
 	public boolean isVegeterian() {
 		boolean vegeterian = true;
-		vegeterian = vegeterian && helpers.checkVegeterian(hasBase);
-		vegeterian = vegeterian && helpers.checkVegeterian(hasTopping);
+		vegeterian = vegeterian && helpers.checkVegeterian(base);
+		vegeterian = vegeterian && helpers.checkVegeterian(topping);
 		return vegeterian;
 	}
 }
