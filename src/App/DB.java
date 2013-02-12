@@ -21,19 +21,19 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class DB {
-	Document db;
+	public Document db;
 	public List <Ingredient> ingredientList = new ArrayList <Ingredient> ();
 	public List <Ingredient> sauceList = new ArrayList <Ingredient> ();
-	Map <Integer,Ingredient> insideIngredientList = new HashMap<Integer,Ingredient>();
-	Map <Integer,Ingredient> outsideIngredientList = new HashMap<Integer,Ingredient>();
-	Map <Integer,Ingredient> toppingIngredientList = new HashMap<Integer,Ingredient>();
-	Map <Integer,Ingredient> baseIngredientList = new HashMap<Integer,Ingredient>();
+	public Map <Integer,Ingredient> insideIngredientList = new HashMap<Integer,Ingredient>();
+	public Map <Integer,Ingredient> outsideIngredientList = new HashMap<Integer,Ingredient>();
+	public Map <Integer,Ingredient> toppingIngredientList = new HashMap<Integer,Ingredient>();
+	public Map <Integer,Ingredient> baseIngredientList = new HashMap<Integer,Ingredient>();
 	
 	
-	List <String> strInsideIngredient = new ArrayList<String>();
-	List <String> strOutsideIngredient = new ArrayList<String>();
-	List <String> strBaseIngredient = new ArrayList<String>();
-	List <String> strToppingIngredient = new ArrayList<String>();
+	public List <String> strInsideIngredient = new ArrayList<String>();
+	public List <String> strOutsideIngredient = new ArrayList<String>();
+	public List <String> strBaseIngredient = new ArrayList<String>();
+	public List <String> strToppingIngredient = new ArrayList<String>();
 	public DB() throws ParserConfigurationException, SAXException, IOException{
 		File fXmlFile = new File("info/Plates.xml");
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -115,6 +115,29 @@ public class DB {
 				outsideIngredientCounter++;
 			}
 		}
-		
 	}
+	 public List <Ingredient> getSelectedIngredient(int Status,String [] selectedIngredient){
+			List <Ingredient> selectedIngredientList = new ArrayList <Ingredient> ();
+			if (Status ==1){ 
+				for (String ingredientStr:selectedIngredient){
+					selectedIngredientList.add(insideIngredientList.get(Integer.valueOf(ingredientStr)));
+				}
+			}
+			if (Status ==2){
+				for (String ingredientStr:selectedIngredient){
+					selectedIngredientList.add(outsideIngredientList.get(Integer.valueOf(ingredientStr)));
+				}
+			}
+			if (Status ==3){
+				for (String ingredientStr:selectedIngredient){
+					selectedIngredientList.add(toppingIngredientList.get(Integer.valueOf(ingredientStr)));
+				}
+			}
+			if (Status ==4){
+				for (String ingredientStr:selectedIngredient){
+					selectedIngredientList.add(baseIngredientList.get(Integer.valueOf(ingredientStr)));
+				}
+			}
+			return selectedIngredientList;
+		}
 }
