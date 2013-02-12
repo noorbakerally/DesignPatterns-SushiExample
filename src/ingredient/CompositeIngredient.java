@@ -4,8 +4,8 @@ import ingredient.Ingredient;;
 public class CompositeIngredient extends Ingredient{
 
 	public CompositeIngredient(int id, String ingredientName,
-			boolean isVegeterian, boolean isShellFish, boolean isDairy,String presence) {
-		super(id, ingredientName, isVegeterian, isShellFish, isDairy,presence);
+			boolean isVegeterian,String presence) {
+		super(id, ingredientName, isVegeterian,presence);
 		// TODO Auto-generated constructor stub
 	}
 

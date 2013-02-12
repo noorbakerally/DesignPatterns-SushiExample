@@ -9,8 +9,6 @@ public abstract class Ingredient {
 	protected float pricePerUnit;
 	protected int unit;
 	protected boolean isVegeterian;
-	protected boolean isShellFish;
-	protected boolean isDairy;
 	protected String presence;
 	protected String region;
 	protected List <Ingredient> ingredientList = new ArrayList <Ingredient>();
@@ -22,7 +20,7 @@ public abstract class Ingredient {
 	public String toString(){
 		return name;
 	}
-	public Ingredient(int id,String ingredientName,boolean isVegeterian,boolean isShellFish,boolean isDairy,String presence){
+	public Ingredient(int id,String ingredientName,boolean isVegeterian,String presence){
 		this.id = id;this.name = ingredientName; this.isVegeterian = isVegeterian;
 		this.presence = presence;
 	}

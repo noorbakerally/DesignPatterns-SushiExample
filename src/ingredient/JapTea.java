@@ -2,9 +2,8 @@ package ingredient;
 
 public class JapTea extends Ingredient{
 
-	public JapTea(int id, String ingredientName, boolean isVegeterian,
-			boolean isShellFish, boolean isDairy, String presence) {
-		super(id, ingredientName, isVegeterian, isShellFish, isDairy, presence);
+	public JapTea(int id, String ingredientName, boolean isVegeterian,String presence) {
+		super(id, ingredientName, isVegeterian, presence);
 		// TODO Auto-generated constructor stub
 	}
 

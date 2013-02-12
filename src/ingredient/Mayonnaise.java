@@ -2,10 +2,8 @@ package ingredient;
 
 public class Mayonnaise extends Ingredient{
 
-	public Mayonnaise(int id, String ingredientName, boolean isVegeterian,
-			boolean isShellFish, boolean isDairy,String presence) {
-		super(id, ingredientName, isVegeterian, isShellFish, isDairy,presence);
-		// TODO Auto-generated constructor stub
+	public Mayonnaise(int id, String ingredientName, boolean isVegeterian,boolean isShellFish, boolean isDairy,String presence) {
+		super(id, ingredientName, isVegeterian, presence);
 	}
 
 	@Override

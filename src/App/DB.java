@@ -7,7 +7,9 @@ import ingredient.SimpleIngredientFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -18,19 +20,26 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class LoadDB {
+public class DB {
 	Document db;
-	List <Ingredient> ingredientList = new ArrayList <Ingredient> ();
-	List <Ingredient> sauceList = new ArrayList <Ingredient> ();
+	public List <Ingredient> ingredientList = new ArrayList <Ingredient> ();
+	public List <Ingredient> sauceList = new ArrayList <Ingredient> ();
+	Map <Integer,Ingredient> insideIngredientList = new HashMap<Integer,Ingredient>();
+	Map <Integer,Ingredient> outsideIngredientList = new HashMap<Integer,Ingredient>();
+	Map <Integer,Ingredient> toppingIngredientList = new HashMap<Integer,Ingredient>();
+	Map <Integer,Ingredient> baseIngredientList = new HashMap<Integer,Ingredient>();
 	
-	public LoadDB() throws ParserConfigurationException, SAXException, IOException{
+	
+	List <String> strInsideIngredient = new ArrayList<String>();
+	List <String> strOutsideIngredient = new ArrayList<String>();
+	List <String> strBaseIngredient = new ArrayList<String>();
+	List <String> strToppingIngredient = new ArrayList<String>();
+	public DB() throws ParserConfigurationException, SAXException, IOException{
 		File fXmlFile = new File("info/Plates.xml");
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		db = dBuilder.parse(fXmlFile);
 		generateIngredient();
-		
-		
 	}
 	
 	public List <Ingredient> getSauceList(){
@@ -83,5 +92,29 @@ public class LoadDB {
 				  ingredientList.add(ingredient);
 		      }
 		}
+		int baseIngredientCounter=1,toppingIngredientCounter=1,insideIngredientCounter=1,outsideIngredientCounter=1;
+		for (Ingredient currentIngredient:ingredientList){
+			if (currentIngredient.getPresence().contains("B")){
+				baseIngredientList.put(baseIngredientCounter, currentIngredient);
+				strBaseIngredient.add(currentIngredient.getName());
+				baseIngredientCounter++;
+			}
+			if (currentIngredient.getPresence().contains("T")){
+				toppingIngredientList.put(toppingIngredientCounter, currentIngredient);
+				strToppingIngredient.add(currentIngredient.getName());
+				toppingIngredientCounter++;
+			}
+			if (currentIngredient.getPresence().contains("I")){
+				insideIngredientList.put(insideIngredientCounter, currentIngredient);
+				strInsideIngredient.add(currentIngredient.getName());
+				insideIngredientCounter++;
+			}
+			if (currentIngredient.getPresence().contains("O")){
+				outsideIngredientList.put(outsideIngredientCounter, currentIngredient);
+				strOutsideIngredient.add(currentIngredient.getName());
+				outsideIngredientCounter++;
+			}
+		}
+		
 	}
 }

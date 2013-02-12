@@ -9,10 +9,8 @@ import plate.Plate;
 
 public class WesternSushiStore extends SushiStore{
 
-	public WesternSushiStore(List<Ingredient> ingredientList,
-			List<Ingredient> baseSauceList) {
-		super(ingredientList, baseSauceList);
-		// TODO Auto-generated constructor stub
+	public WesternSushiStore(List<Ingredient> baseSauceList) {
+		super(baseSauceList);
 	}
 
 	@Override

@@ -13,10 +13,10 @@ public class SimpleIngredientFactory {
 			newIngredient = new Mayonnaise(id,ingredientName,isVegeterian,isShellFish,isDairy, presence);			
 		}
 		if (ingredientName.equals("Tuna")){
-			newIngredient = new Tuna(id,ingredientName,isVegeterian,isShellFish,isDairy, presence);			
+			newIngredient = new Tuna(id,ingredientName,isVegeterian,presence);			
 		}
 		if (ingredientName.equals("Nori")){
-			newIngredient = new Nori(id,ingredientName,isVegeterian,isShellFish,isDairy, presence);			
+			newIngredient = new Nori(id,ingredientName,isVegeterian,presence);			
 		}
 		if (ingredientName.equals("Wasabi")){
 			newIngredient = new Wasabi(id,ingredientName,isVegeterian,isShellFish,isDairy, presence);			
@@ -28,7 +28,7 @@ public class SimpleIngredientFactory {
 			newIngredient = new SoyaBean(id,ingredientName,isVegeterian,isShellFish,isDairy, presence);			
 		}
 		if (ingredientName.equals("JapTea")){
-			newIngredient = new JapTea(id,ingredientName,isVegeterian,isShellFish,isDairy, presence);			
+			newIngredient = new JapTea(id,ingredientName,isVegeterian,presence);			
 		}
 		if (ingredientName.equals("WestWine")){
 			newIngredient = new WestWine(id,ingredientName,isVegeterian,isShellFish,isDairy, presence);			
