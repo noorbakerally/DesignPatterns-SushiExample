@@ -13,7 +13,7 @@ public class MainView implements MainController.View{
 	}
 	@Override
 	public int getPlateFranchise() {
-		return Integer.valueOf(ViewChoice.getChoices("Select a Plate",new ArrayList<String>() {{add("Japanese Plate");add("Western Plate"); }}));
+		return Integer.valueOf(getChoices("Select a Plate",new ArrayList<String>() {{add("Japanese Plate");add("Western Plate"); }}));
 	}
 	@Override
 	public int getNumberOfPieces() {
@@ -22,7 +22,7 @@ public class MainView implements MainController.View{
 	}
 	@Override
 	public int getPieceType(int pieceNumber) {
-		return Integer.valueOf(ViewChoice.getChoices("SELECT TYPE OF PIECE "+pieceNumber,new ArrayList <String> (){{add("Roll");add("Hand Roll(Cone)");add("Base with Topping");}}));
+		return Integer.valueOf(getChoices("SELECT TYPE OF PIECE "+pieceNumber,new ArrayList <String> (){{add("Roll");add("Hand Roll(Cone)");add("Base with Topping");}}));
 	}
 	@Override
 	public void showPlate(Plate plate) {
@@ -30,6 +30,20 @@ public class MainView implements MainController.View{
 	}
 	
 	public String[] getIngredient(String ingredientType,List <String> ingredient){
-		return ViewChoice.getChoices("Enter "+ingredientType+" ingredient:",ingredient).split(",");
+		return getChoices("Enter "+ingredientType+" ingredient:",ingredient).split(",");
+	}
+	
+	public String getChoices(String title,List <String> choices){
+		String mainChoice = null; 
+		Scanner in = new Scanner(System.in);
+		System.out.println("\n"+title);
+		int choiceNum = 1;
+		for (String currentChoice:choices){
+			System.out.println(choiceNum+". "+currentChoice);
+			choiceNum ++;
+		}
+		System.out.print("Enter Choice:");
+		mainChoice = in.next();
+		return mainChoice;
 	}
 }
