@@ -1,33 +1,14 @@
 package controller;
-
-import ingredient.Ingredient;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.parsers.ParserConfigurationException;
-
 import org.xml.sax.SAXException;
-
 import App.DB;
-
-import piece.BaseTopping;
-import piece.Cone;
 import piece.Piece;
-import piece.Roll;
 import plate.Plate;
-import store.SimpleStoreFactory;
-import store.SushiStore;
-import view.RollView;
-
+import store.*;
 public class MainController {
-	SushiStore sushiStore;
-	DB db;
-	int plateFranchise;
-	int numberOfPieces;
-	View view;
-	PieceControlHandler handler;
+	SushiStore sushiStore;DB db;int plateFranchise;int numberOfPieces;View view;PieceControlHandler handler;
 	public interface View{
 		int getPlateFranchise();
 		int getNumberOfPieces();
@@ -61,5 +42,4 @@ public class MainController {
 		controlHandler2.setNext(controlHandler3);
 		return controlHandler1;
 	}
-	
 }

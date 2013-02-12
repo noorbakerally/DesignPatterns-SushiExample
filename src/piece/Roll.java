@@ -1,17 +1,12 @@
 package piece;
 
 import ingredient.Ingredient;
-
-import java.util.ArrayList;
 import java.util.List;
-
 import App.helpers;
-
 public class Roll extends Piece {
 	List <Ingredient> inside;
 	List <Ingredient> outside;
 	List <Ingredient> topping;
-	
 	public Roll(List <Ingredient> inside,List <Ingredient> outside,List <Ingredient> topping){
 		this.inside = inside;
 		this.outside = outside;
@@ -20,7 +15,6 @@ public class Roll extends Piece {
 		allPricedIngredients.addAll(outside);
 		allPricedIngredients.addAll(topping);
 	}
-	
 	@Override
 	public String toString() {
 		String objStr = "\n";
@@ -40,7 +34,6 @@ public class Roll extends Piece {
 		}
 		return objStr;
 	}
-	
 	@Override
 	public boolean isVegeterian() {
 		boolean vegeterian = true;

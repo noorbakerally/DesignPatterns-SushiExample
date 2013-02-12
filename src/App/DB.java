@@ -27,9 +27,7 @@ public class DB {
 	public Map <Integer,Ingredient> insideIngredientList = new HashMap<Integer,Ingredient>();
 	public Map <Integer,Ingredient> outsideIngredientList = new HashMap<Integer,Ingredient>();
 	public Map <Integer,Ingredient> toppingIngredientList = new HashMap<Integer,Ingredient>();
-	public Map <Integer,Ingredient> baseIngredientList = new HashMap<Integer,Ingredient>();
-	
-	
+	public Map <Integer,Ingredient> baseIngredientList = new HashMap<Integer,Ingredient>();	
 	public List <String> strInsideIngredient = new ArrayList<String>();
 	public List <String> strOutsideIngredient = new ArrayList<String>();
 	public List <String> strBaseIngredient = new ArrayList<String>();
@@ -41,17 +39,12 @@ public class DB {
 		db = dBuilder.parse(fXmlFile);
 		generateIngredient();
 	}
-	
 	public List <Ingredient> getSauceList(){
 		return sauceList;
 	}
-	
 	public List <Ingredient> getIngredientList(){
 		return ingredientList;
-	}
-	
-	
-	
+	}	
 	void generateIngredient(){
 		NodeList ingredients = db.getElementsByTagName("ingredients").item(0).getChildNodes();
 		for(int i=0; i<ingredients.getLength(); i++){

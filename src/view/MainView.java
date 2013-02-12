@@ -30,7 +30,6 @@ public class MainView implements MainController.View{
 	public void showPlate(Plate plate) {
 		System.out.println(plate.toString());
 	}
-	
 	public String[] getIngredient(String ingredientType,List <String> ingredient){
 		return ChoiceView.getChoice("Enter "+ingredientType+" ingredient:",ingredient).split(",");
 	}

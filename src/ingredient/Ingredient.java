@@ -17,49 +17,25 @@ public abstract class Ingredient {
 	public abstract void removeIngredient(Ingredient ingredient);
 	public abstract Ingredient getIngredient(Ingredient ingredient);
 	
-	public String toString(){
-		return name;
-	}
+	
 	public Ingredient(int id,String ingredientName,boolean isVegeterian,String presence){
 		this.id = id;this.name = ingredientName; this.isVegeterian = isVegeterian;
 		this.presence = presence;
 	}
-	public boolean getIsVegeterian(){
-		return isVegeterian;
-	}
+	
 	public Ingredient(int id, String ingredientName) {
 		// TODO Auto-generated constructor stub
 		this.id = id;
 		this.name = ingredientName;
 	}
-	public void setPresence(String presence){
-		this.presence =  presence;
-	}
-	public String getPresence(){
-		return presence;
-	}
-	
-	public void setPricePerUnit(float pricePerUnit){
-		this.pricePerUnit = pricePerUnit;
-	}
-	
-	public float getPrice(){
-		return pricePerUnit;
-	}
-	
-	public void setRegion(String region){
-		this.region = region;
-	}
-	
-	public String getRegion(){
-		return region;
-	}
-	
-	public int getId(){
-		return id;
-	}
-	
-	public String getName(){
-		return name;
-	}
+	public String toString(){return name;}
+	public boolean getIsVegeterian(){return isVegeterian;}
+	public void setPresence(String presence){this.presence =  presence;}
+	public String getPresence(){return presence;}
+	public void setPricePerUnit(float pricePerUnit){this.pricePerUnit = pricePerUnit;}
+	public float getPrice(){return pricePerUnit;}
+	public void setRegion(String region){this.region = region;}
+	public String getRegion(){return region;}
+	public int getId(){	return id;}
+	public String getName(){return name;}
 }
