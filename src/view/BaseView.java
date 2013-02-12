@@ -1,5 +1,7 @@
 package view;
 import java.util.List;
+
+import App.helpers;
 import controller.*;
 public class BaseView implements BaseToppingController.View{
 	List <String> base;
@@ -11,12 +13,12 @@ public class BaseView implements BaseToppingController.View{
 	@Override
 	public String[] getToppingIngredient() {
 		// TODO Auto-generated method stub
-		return ChoiceView.getChoice("Choose topping Ingredient", topping).split(",");
+		return helpers.getChoice("Choose topping Ingredient", topping).split(",");
 	}
 	@Override
 	public String[] getBaseIngredient() {
 		// TODO Auto-generated method stub
-		return ChoiceView.getChoice("Choose Base Ingredient", base).split(",");
+		return helpers.getChoice("Choose Base Ingredient", base).split(",");
 	}
 
 }

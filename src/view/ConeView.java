@@ -1,5 +1,7 @@
 package view;
 import java.util.List;
+
+import App.helpers;
 import controller.ConeController;
 
 import controller.RollController;;
@@ -11,10 +13,10 @@ public class ConeView implements ConeController.View{
 		this.outside = outside;
 	}
 	public String[] getInsideIngredient() {
-		return ChoiceView.getChoice("Choose Inside Ingredient", inside).split(",");
+		return helpers.getChoice("Choose Inside Ingredient", inside).split(",");
 	}
 	public String[] getOutsideIngredient() {
-		return ChoiceView.getChoice("Choose Outside Ingredient", outside).split(",");
+		return helpers.getChoice("Choose Outside Ingredient", outside).split(",");
 	}
 
 }

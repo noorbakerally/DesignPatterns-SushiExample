@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import App.helpers;
+
 import controller.MainController;
 
 import plate.Plate;
@@ -15,7 +17,7 @@ public class MainView implements MainController.View{
 	}
 	@Override
 	public int getPlateFranchise() {
-		return Integer.valueOf(ChoiceView.getChoice("Select a Plate",new ArrayList<String>() {{add("Japanese Plate");add("Western Plate"); }}));
+		return Integer.valueOf(helpers.getChoice("Select a Plate",new ArrayList<String>() {{add("Japanese Plate");add("Western Plate"); }}));
 	}
 	@Override
 	public int getNumberOfPieces() {
@@ -24,13 +26,13 @@ public class MainView implements MainController.View{
 	}
 	@Override
 	public int getPieceType(int pieceNumber) {
-		return Integer.valueOf(ChoiceView.getChoice("SELECT TYPE OF PIECE "+pieceNumber,new ArrayList <String> (){{add("Roll");add("Hand Roll(Cone)");add("Base with Topping");}}));
+		return Integer.valueOf(helpers.getChoice("SELECT TYPE OF PIECE "+pieceNumber,new ArrayList <String> (){{add("Roll");add("Hand Roll(Cone)");add("Base with Topping");}}));
 	}
 	@Override
 	public void showPlate(Plate plate) {
 		System.out.println(plate.toString());
 	}
 	public String[] getIngredient(String ingredientType,List <String> ingredient){
-		return ChoiceView.getChoice("Enter "+ingredientType+" ingredient:",ingredient).split(",");
+		return helpers.getChoice("Enter "+ingredientType+" ingredient:",ingredient).split(",");
 	}
 }

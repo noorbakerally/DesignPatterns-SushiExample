@@ -1,6 +1,8 @@
 package view;
 import java.util.List;
 
+import App.helpers;
+
 import controller.RollController;;
 public class RollView implements RollController.View{
 	List <String> inside;
@@ -12,16 +14,16 @@ public class RollView implements RollController.View{
 		this.topping = topping;
 	}
 	public String[] getInsideIngredient() {
-		return ChoiceView.getChoice("Choose Inside Ingredient", inside).split(",");
+		return helpers.getChoice("Choose Inside Ingredient", inside).split(",");
 	}
 	public String[] getOutsideIngredient() {
-		return ChoiceView.getChoice("Choose Outside Ingredient", outside).split(",");
+		return helpers.getChoice("Choose Outside Ingredient", outside).split(",");
 	}
 
 	@Override
 	public String[] getToppingIngredient() {
 		// TODO Auto-generated method stub
-		return ChoiceView.getChoice("Choose topping Ingredient", topping).split(",");
+		return helpers.getChoice("Choose topping Ingredient", topping).split(",");
 	}
 
 }
