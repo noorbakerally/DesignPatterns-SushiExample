@@ -40,4 +40,10 @@ public class BaseTopping extends Piece {
 		vegeterian = vegeterian && helpers.checkVegeterian(topping);
 		return vegeterian;
 	}
+
+	@Override
+	public float getPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

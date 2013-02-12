@@ -31,4 +31,10 @@ public class JapanesePlate extends Plate {
 		objStr += "Vegeterian:"+(isVegeterian()? "Plate is Vegeterian":"Plate is not Vegeterian");
 		return objStr;
 	}
+
+	@Override
+	public float getPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

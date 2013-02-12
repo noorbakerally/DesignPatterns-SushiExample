@@ -31,4 +31,10 @@ public class WesternPlate extends Plate {
 		return objStr;
 	}
 
+	@Override
+	public float getPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

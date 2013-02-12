@@ -31,4 +31,12 @@ public abstract class Plate {
 			vegeterian = vegeterian && helpers.checkVegeterian(baseSauce);
 			return vegeterian;
 		}
+		
+		
+		public float getDefaultPrice(){
+			float currentDefaultPrice = 0;
+			
+			return currentDefaultPrice;
+		}
+		public abstract float getPrice();
 }

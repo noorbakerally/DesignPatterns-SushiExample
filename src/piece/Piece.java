@@ -7,4 +7,5 @@ public abstract class Piece {
 	String name;
 	public abstract String toString();
 	public abstract boolean isVegeterian();
+	public abstract float getPrice();
 }
