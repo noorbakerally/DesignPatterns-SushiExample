@@ -18,11 +18,11 @@ public class ConeController extends PieceControlHandler{
 		this.db = db;
 		this.view = new ConeView(db.strInsideIngredient, db.strOutsideIngredient);;
 	}
-	protected Piece buildPiece(int pieceType) {
+	protected Piece getPiece(int pieceType) {
 		if (pieceType == CONE)
 			return new Cone(db.getSelectedIngredient(1,view.getInsideIngredient()),db.getSelectedIngredient(2,view.getOutsideIngredient()));
 		else{
-			return handler.buildPiece(pieceType);
+			return handler.getPiece(pieceType);
 		}
 	}
 }

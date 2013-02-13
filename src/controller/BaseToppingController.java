@@ -14,17 +14,16 @@ public class BaseToppingController extends PieceControlHandler{
 		String[] getBaseIngredient();
 		String[] getToppingIngredient();
 	}
-	
 	public BaseToppingController(DB db){
 		this.db = db;
 		this.view = new BaseView(db.strBaseIngredient,db.strToppingIngredient);
 	}
 	
-	protected Piece buildPiece(int pieceType) {
+	protected Piece getPiece(int pieceType) {
 		if (pieceType == BASE_TOPPING)
 			return new BaseTopping(db.getSelectedIngredient(1,view.getBaseIngredient()),db.getSelectedIngredient(2,view.getToppingIngredient()));
 		else{
-			return handler.buildPiece(pieceType);
+			return handler.getPiece(pieceType);
 		}
 	}
 }

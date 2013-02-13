@@ -14,7 +14,7 @@ public abstract class PieceControlHandler {
     public static int BASE_TOPPING = 3;
     
     protected PieceControlHandler handler;
-    protected abstract Piece buildPiece(int pieceType);
+    protected abstract Piece getPiece(int pieceType);
     protected DB db;
     public void setNext(PieceControlHandler handler){
     	this.handler = handler;

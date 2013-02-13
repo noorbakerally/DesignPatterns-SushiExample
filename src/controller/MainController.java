@@ -29,7 +29,7 @@ public class MainController {
 		int currentPieceType;
 		for  (int pieceCounter=1;pieceCounter<=numberOfPieces;pieceCounter++){
 			currentPieceType = view.getPieceType(pieceCounter);
-			Piece tmpPiece = handler.buildPiece(currentPieceType);
+			Piece tmpPiece = handler.getPiece(currentPieceType);
 			sushiStore.addPieces(tmpPiece);
 		}
 		view.showPlate(sushiStore.getPlate());
