@@ -26,4 +26,8 @@ public class MainView implements MainController.View{
 	public String[] getIngredient(String ingredientType,List <String> ingredient){
 		return helpers.getChoice("Enter "+ingredientType+" ingredient:",ingredient).split(",");
 	}
+	@Override
+	public int getPlateDecorator() {
+		return Integer.valueOf(helpers.getChoice("Select Plate decorator:",new ArrayList<String>() {{add("Decorate with tomato");add("Decorate with meat");add("No Decorator"); }}));
+	}
 }
