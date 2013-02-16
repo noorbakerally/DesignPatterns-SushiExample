@@ -1,5 +1,4 @@
 package controller;
-
 import piece.Cone;
 import piece.Piece;import proxy.Database;
 import view.PieceView;

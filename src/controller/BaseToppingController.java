@@ -1,5 +1,4 @@
 package controller;
-
 import piece.BaseTopping;
 import piece.Piece;
 import proxy.Database;
