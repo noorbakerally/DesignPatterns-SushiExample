@@ -1,15 +1,6 @@
 package view;
-
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-import App.helpers;
-
-import controller.MainController;
-
-import plate.Plate;
-
+import java.util.List;import java.util.Scanner;import App.helpers;import controller.MainController;import plate.Plate;
 public class MainView implements MainController.View{
 	Scanner in;
 	public MainView(){

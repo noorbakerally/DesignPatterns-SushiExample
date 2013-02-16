@@ -1,6 +1,6 @@
 package piece;
 import ingredient.Ingredient;
-import java.util.ArrayList;import java.util.List;import javax.jws.Oneway;import App.helpers;
+import java.util.ArrayList;import java.util.List;import App.helpers;
 public class BaseTopping extends Piece {
 	List <Ingredient> base = new ArrayList <Ingredient> ();
 	List <Ingredient> topping = new ArrayList <Ingredient> ();

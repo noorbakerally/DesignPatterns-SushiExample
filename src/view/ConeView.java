@@ -1,10 +1,6 @@
 package view;
 import java.util.List;
-
-import App.helpers;
-import controller.ConeController;
-
-import controller.RollController;;
+import App.helpers;import controller.ConeController;
 public class ConeView implements ConeController.View{
 	List <String> inside;
 	List <String> outside;

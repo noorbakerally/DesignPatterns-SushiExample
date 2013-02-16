@@ -1,12 +1,6 @@
 package controller;
-
-import ingredient.Ingredient;
-
-import java.util.ArrayList;
-import java.util.List;
 import piece.Piece;
 import proxy.Database;
-
 public abstract class PieceControlHandler {
 	public static int ROLL = 1;
     public static int CONE = 2;

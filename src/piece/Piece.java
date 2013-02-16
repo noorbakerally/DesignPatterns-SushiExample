@@ -1,9 +1,6 @@
 package piece;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
-
-import ingredient.Ingredient;
+import java.util.List;import ingredient.Ingredient;
 public abstract class Piece {
 	String name;
 	protected List <Ingredient> allIngredients = new ArrayList<Ingredient>(); 

@@ -1,13 +1,7 @@
 package plate;
 
 import ingredient.Ingredient;
-
-import java.util.List;
-import java.util.ListIterator;
-
-
 import piece.Piece;
-
 public class JapanesePlate extends Plate {
 	@Override
 	public String toString() {

@@ -1,14 +1,6 @@
 package controller;
-
-import ingredient.Ingredient;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import piece.Piece;
-import piece.Roll;
-import proxy.Database;
-import view.RollView;
+import piece.Roll;import proxy.Database;import view.RollView;
 
 public class RollController extends PieceControlHandler{
 	View view;

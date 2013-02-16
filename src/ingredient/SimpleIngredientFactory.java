@@ -1,5 +1,4 @@
 package ingredient;
-import org.w3c.dom.Node;
 public class SimpleIngredientFactory {
 	public static Ingredient createIngredient(int id,String ingredientName,boolean isVegeterian,boolean isShellFish,boolean isDairy,String presence){
 		Ingredient newIngredient = null;
