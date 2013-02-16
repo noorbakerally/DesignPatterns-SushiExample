@@ -8,6 +8,7 @@ public abstract class Plate {
 			pieces.add(piece);
 		}
 		public abstract String toString();
+		
 		public void addBaseSauce(Ingredient ingredient){
 			baseSauce.add(ingredient);
 		}

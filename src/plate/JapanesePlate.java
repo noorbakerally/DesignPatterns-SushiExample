@@ -22,8 +22,6 @@ public class JapanesePlate extends Plate {
 			objStr += currentSauce.toString()+" ";
 		}
 		objStr += "\n";
-		objStr += "Vegeterian:"+(isVegeterian()? "Plate is Vegeterian\n":"Plate is not Vegeterian\n");
-		objStr += "Price:£"+getPrice()+"\n";
 		return objStr;
 	}
 

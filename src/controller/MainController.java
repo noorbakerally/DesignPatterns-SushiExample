@@ -2,7 +2,7 @@ package controller;
 import java.io.IOException;
 import java.util.List;import javax.xml.parsers.ParserConfigurationException;import org.xml.sax.SAXException;import piece.Piece;import plate.Plate;import proxy.Database;import store.*;
 public class MainController {
-	SushiStore sushiStore;Database db;int plateFranchise;int plateDecorator;int numberOfPieces;View view;PieceControlHandler handler;
+	SushiStore sushiStore;Database db;int plateFranchise;int numberOfPieces;View view;PieceControlHandler handler;
 	public interface View{
 		int getPlateFranchise();
 		int getPlateDecorator();
@@ -20,7 +20,6 @@ public class MainController {
 	void launch(){
 		plateFranchise = view.getPlateFranchise();
 		sushiStore = SimpleStoreFactory.createSushiStore(plateFranchise, db.getSauceList());
-		plateDecorator = view.getPlateDecorator();
 		numberOfPieces = view.getNumberOfPieces();
 		int currentPieceType;
 		for  (int pieceCounter=1;pieceCounter<=numberOfPieces;pieceCounter++){
@@ -28,8 +27,11 @@ public class MainController {
 			Piece tmpPiece = handler.getPiece(currentPieceType);
 			sushiStore.addPieces(tmpPiece);
 		}
+		
+		sushiStore.decoratePlate(view.getPlateDecorator());
 		view.showPlate(sushiStore.getPlate());
 	}
+	//setting the control chain
 	PieceControlHandler createPieceControlChain(){
 		PieceControlHandler controlHandler1 = new RollController(db);
 		PieceControlHandler controlHandler2 = new ConeController(db);

@@ -2,7 +2,6 @@ package plate;
 
 public abstract class PlateDecorator extends Plate{
 	protected Plate decoratedPlate;
-	
 	public PlateDecorator(Plate decoratedPlate){
 			this.decoratedPlate = decoratedPlate;
 	}

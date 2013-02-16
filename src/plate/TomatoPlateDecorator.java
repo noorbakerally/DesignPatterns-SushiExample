@@ -13,10 +13,12 @@ public class TomatoPlateDecorator extends PlateDecorator{
 	}
 	
 	public String toString(){
-		return decoratedPlate.toString()+"\nPlate decorated with Tomato";
+		String objStr = "";
+		objStr = "Vegeterian:"+(isVegeterian()? "Plate is Vegeterian\n":"Plate is not Vegeterian\n");
+		objStr += "Price:£"+getPrice()+"\n";
+		return decoratedPlate.toString()+objStr;
 	}
 	public float getPrice(){
-		//hardcoding price for the Tomato
 		return (decoratedPlate.getPrice()+2);
 	} 
 }
