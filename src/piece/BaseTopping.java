@@ -1,14 +1,6 @@
 package piece;
-
 import ingredient.Ingredient;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.jws.Oneway;
-
-import App.helpers;
-
+import java.util.ArrayList;import java.util.List;import javax.jws.Oneway;import App.helpers;
 public class BaseTopping extends Piece {
 	List <Ingredient> base = new ArrayList <Ingredient> ();
 	List <Ingredient> topping = new ArrayList <Ingredient> ();
@@ -19,7 +11,6 @@ public class BaseTopping extends Piece {
 		allIngredients.addAll(base);
 		allIngredients.addAll(topping);
 	}
-	
 	@Override
 	public String  toString() {
 		String objStr = "\n";
@@ -34,7 +25,6 @@ public class BaseTopping extends Piece {
 		}
 		return objStr;
 	}
-	
 	@Override
 	public boolean isVegeterian() {
 		boolean vegeterian = true;

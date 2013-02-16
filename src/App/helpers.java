@@ -13,6 +13,7 @@ public class helpers {
 		return isVegeterian;
 	}
 	
+	//execludes all validation
 	public static String getChoice(String title,List <String> choices){
 		String mainChoice = null; 
 		Scanner in = new Scanner(System.in);

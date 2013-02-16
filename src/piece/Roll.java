@@ -1,8 +1,6 @@
 package piece;
-
 import ingredient.Ingredient;
-import java.util.List;
-import App.helpers;
+import java.util.List;import App.helpers;
 public class Roll extends Piece {
 	List <Ingredient> inside;
 	List <Ingredient> outside;
@@ -27,7 +25,6 @@ public class Roll extends Piece {
 		for (Ingredient currentIngredient:outside){
 			objStr +=currentIngredient.getName()+" ";
 		}
-		
 		objStr +="\nTopping Ingredient:";
 		for (Ingredient currentIngredient:topping){
 			objStr +=(currentIngredient.getName()+" ");

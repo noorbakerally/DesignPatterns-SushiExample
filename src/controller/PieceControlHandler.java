@@ -4,9 +4,8 @@ import ingredient.Ingredient;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import App.DB;
 import piece.Piece;
+import proxy.Database;
 
 public abstract class PieceControlHandler {
 	public static int ROLL = 1;
@@ -15,7 +14,7 @@ public abstract class PieceControlHandler {
     
     protected PieceControlHandler handler;
     protected abstract Piece getPiece(int pieceType);
-    protected DB db;
+    protected Database db;
     public void setNext(PieceControlHandler handler){
     	this.handler = handler;
     }

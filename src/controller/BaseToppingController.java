@@ -2,21 +2,26 @@ package controller;
 
 import piece.BaseTopping;
 import piece.Piece;
+import proxy.Database;
 import view.BaseView;
-import App.DB;
 public class BaseToppingController extends PieceControlHandler{
 	View view;
+	Database db;
 	public interface View{
 		String[] getBaseIngredient();
 		String[] getToppingIngredient();
 	}
-	public BaseToppingController(DB db){
+	public BaseToppingController(Database db){
 		this.db = db;
-		this.view = new BaseView(db.strBaseIngredient,db.strToppingIngredient);
+		this.view = new BaseView(db.getStrBaseIngredient(),db.getStrToppingIngredient());
+		
 	}
 	protected Piece getPiece(int pieceType) {
 		if (pieceType == BASE_TOPPING)
-			return new BaseTopping(db.getSelectedIngredient(1,view.getBaseIngredient()),db.getSelectedIngredient(2,view.getToppingIngredient()));
+			//status is the status of placement of the ingredient, 1=inside, 2=outside..
+			//the view returns a comma seperated strings where each str is an id,
+			return new BaseTopping(db.getAllSelectedIngredient(1,view.getBaseIngredient()),
+					db.getAllSelectedIngredient(2,view.getToppingIngredient()));
 		else{
 			return handler.getPiece(pieceType);
 		}

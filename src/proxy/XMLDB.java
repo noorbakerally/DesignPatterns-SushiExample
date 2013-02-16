@@ -1,26 +1,7 @@
-package App;
+package proxy;
 
-import ingredient.CompositeIngredient;
-import ingredient.Ingredient;
-import ingredient.SimpleIngredientFactory;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-public class DB {
+import ingredient.CompositeIngredient;import ingredient.Ingredient;import ingredient.SimpleIngredientFactory;import java.io.File;import java.io.IOException;import java.util.ArrayList;import java.util.HashMap;import java.util.List;import java.util.Map;import javax.xml.parsers.DocumentBuilder;import javax.xml.parsers.DocumentBuilderFactory;import javax.xml.parsers.ParserConfigurationException;import org.w3c.dom.Document;import org.w3c.dom.Node;import org.w3c.dom.NodeList;import org.xml.sax.SAXException;public class XMLDB implements Database {
+	
 	public Document db;
 	public List <Ingredient> ingredientList = new ArrayList <Ingredient> ();
 	public List <Ingredient> sauceList = new ArrayList <Ingredient> ();
@@ -36,8 +17,8 @@ public class DB {
 	public List <String> strToppingIngredient = new ArrayList<String>();
 	
 	
-	public DB() throws ParserConfigurationException, SAXException, IOException{
-		File fXmlFile = new File("info/Plates.xml");
+	public XMLDB(String location,Object configDetails) throws ParserConfigurationException, SAXException, IOException{
+		File fXmlFile = new File(location);
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		db = dBuilder.parse(fXmlFile);
@@ -113,7 +94,7 @@ public class DB {
 			}
 		}
 	}
-	 public List <Ingredient> getSelectedIngredient(int Status,String [] selectedIngredient){
+	 public List <Ingredient> getAllSelectedIngredient(int Status,String [] selectedIngredient){
 			List <Ingredient> selectedIngredientList = new ArrayList <Ingredient> ();
 			if (Status ==1){ 
 				for (String ingredientStr:selectedIngredient){
@@ -137,4 +118,29 @@ public class DB {
 			}
 			return selectedIngredientList;
 		}
+	 
+	public Ingredient getInsideIngredient(int id) {
+		return insideIngredientList.get(id);
+	}
+	public Ingredient getOutsideIngredient(int id) {
+		return outsideIngredientList.get(id);
+	}
+	public Ingredient getToppingIngredient(int id) {
+		return toppingIngredientList.get(id);
+	}
+	public Ingredient getBaseIngredient(int id) {
+		return baseIngredientList.get(id);
+	}
+	public List<String> getStrInsideIngredient() {
+		return strInsideIngredient;
+	}
+	public List<String> getStrOutsideIngredient() {
+		return strOutsideIngredient;
+	}
+	public List<String> getStrBaseIngredient() {
+		return strBaseIngredient;
+	}
+	public List<String> getStrToppingIngredient() {
+		return strToppingIngredient;
+	}
 }
