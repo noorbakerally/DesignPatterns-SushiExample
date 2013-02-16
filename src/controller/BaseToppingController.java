@@ -3,7 +3,7 @@ package controller;
 import piece.BaseTopping;
 import piece.Piece;
 import proxy.Database;
-import view.BaseView;
+import view.PieceView;
 public class BaseToppingController extends PieceControlHandler{
 	View view;
 	Database db;
@@ -13,8 +13,7 @@ public class BaseToppingController extends PieceControlHandler{
 	}
 	public BaseToppingController(Database db){
 		this.db = db;
-		this.view = new BaseView(db.getStrBaseIngredient(),db.getStrToppingIngredient());
-		
+		this.view = new PieceView(db.getStrBaseIngredient(),db.getStrToppingIngredient(),"BaseTopping");
 	}
 	protected Piece getPiece(int pieceType) {
 		if (pieceType == BASE_TOPPING)

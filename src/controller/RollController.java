@@ -1,6 +1,6 @@
 package controller;
 import piece.Piece;
-import piece.Roll;import proxy.Database;import view.RollView;
+import piece.Roll;import proxy.Database;import view.PieceView;
 
 public class RollController extends PieceControlHandler{
 	View view;
@@ -13,7 +13,7 @@ public class RollController extends PieceControlHandler{
 	
 	public RollController(Database db){
 		this.db = db;
-		this.view = new RollView(db.getStrInsideIngredient(), db.getStrOutsideIngredient(), db.getStrToppingIngredient());
+		this.view = new PieceView(db.getStrInsideIngredient(), db.getStrOutsideIngredient(), db.getStrToppingIngredient());
 	}
 	
 	protected Piece getPiece(int pieceType) {

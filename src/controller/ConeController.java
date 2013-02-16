@@ -1,7 +1,8 @@
 package controller;
 
 import piece.Cone;
-import piece.Piece;import proxy.Database;import view.ConeView;
+import piece.Piece;import proxy.Database;
+import view.PieceView;
 public class ConeController extends PieceControlHandler{
 	View view;
 	Database db;
@@ -11,7 +12,7 @@ public class ConeController extends PieceControlHandler{
 	}
 	public ConeController(Database db){
 		this.db = db;
-		this.view = new ConeView(db.getStrInsideIngredient(), db.getStrOutsideIngredient());;
+		this.view = new PieceView(db.getStrInsideIngredient(), db.getStrOutsideIngredient(),"Cone");;
 	}
 	protected Piece getPiece(int pieceType) {
 		if (pieceType == CONE)
