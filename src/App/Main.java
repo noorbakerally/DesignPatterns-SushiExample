@@ -17,8 +17,6 @@ public class Main {
 	 * @throws SAXException 
 	 * @throws ParserConfigurationException 
 	 */
-	
-	
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 		// TODO Auto-generated method stub
 		MainController mainController = new MainController(new MainView());

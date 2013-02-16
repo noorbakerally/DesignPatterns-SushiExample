@@ -3,7 +3,7 @@ package ingredient;
 public class Wasabi extends Ingredient{
 
 	public Wasabi(int id, String ingredientName, boolean isVegeterian,
-			boolean isShellFish, boolean isDairy,String presence) {
+			String presence) {
 		super(id, ingredientName, isVegeterian,presence);
 		// TODO Auto-generated constructor stub
 	}

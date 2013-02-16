@@ -1,13 +1,9 @@
 package controller;
 
 import piece.BaseTopping;
-import piece.Cone;
 import piece.Piece;
-import piece.Roll;
 import view.BaseView;
 import App.DB;
-import controller.RollController.View;
-
 public class BaseToppingController extends PieceControlHandler{
 	View view;
 	public interface View{
@@ -18,7 +14,6 @@ public class BaseToppingController extends PieceControlHandler{
 		this.db = db;
 		this.view = new BaseView(db.strBaseIngredient,db.strToppingIngredient);
 	}
-	
 	protected Piece getPiece(int pieceType) {
 		if (pieceType == BASE_TOPPING)
 			return new BaseTopping(db.getSelectedIngredient(1,view.getBaseIngredient()),db.getSelectedIngredient(2,view.getToppingIngredient()));

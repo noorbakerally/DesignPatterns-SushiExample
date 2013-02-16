@@ -2,7 +2,7 @@ package ingredient;
 
 public class Mayonnaise extends Ingredient{
 
-	public Mayonnaise(int id, String ingredientName, boolean isVegeterian,boolean isShellFish, boolean isDairy,String presence) {
+	public Mayonnaise(int id, String ingredientName, boolean isVegeterian,String presence) {
 		super(id, ingredientName, isVegeterian, presence);
 	}
 

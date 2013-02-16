@@ -13,8 +13,8 @@ public class Cone extends Piece{
 	public Cone(List<Ingredient> inside,List<Ingredient> outside) {
 		this.inside = inside;
 		this.outside = outside;
-		allPricedIngredients.addAll(inside);
-		allPricedIngredients.addAll(outside);
+		allIngredients.addAll(inside);
+		allIngredients.addAll(outside);
 	}
 	@Override
 	public String toString() {

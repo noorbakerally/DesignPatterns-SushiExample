@@ -16,8 +16,8 @@ public class BaseTopping extends Piece {
 	public BaseTopping(List<Ingredient> base,	List<Ingredient> topping) {
 		this.base = base;
 		this.topping = topping;
-		allPricedIngredients.addAll(base);
-		allPricedIngredients.addAll(topping);
+		allIngredients.addAll(base);
+		allIngredients.addAll(topping);
 	}
 	
 	@Override

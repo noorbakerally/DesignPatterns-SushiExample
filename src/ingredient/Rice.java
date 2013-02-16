@@ -3,8 +3,7 @@ package ingredient;
 public class Rice extends Ingredient{
 
 	
-	public Rice(int id, String ingredientName, boolean isVegeterian,
-			boolean isShellFish, boolean isDairy,String presence) {
+	public Rice(int id, String ingredientName, boolean isVegeterian,String presence) {
 		super(id, ingredientName, isVegeterian, presence);
 		// TODO Auto-generated constructor stub
 	}

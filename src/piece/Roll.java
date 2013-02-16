@@ -11,9 +11,9 @@ public class Roll extends Piece {
 		this.inside = inside;
 		this.outside = outside;
 		this.topping = topping;
-		allPricedIngredients.addAll(inside);
-		allPricedIngredients.addAll(outside);
-		allPricedIngredients.addAll(topping);
+		allIngredients.addAll(inside);
+		allIngredients.addAll(outside);
+		allIngredients.addAll(topping);
 	}
 	@Override
 	public String toString() {

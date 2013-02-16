@@ -28,10 +28,14 @@ public class DB {
 	public Map <Integer,Ingredient> outsideIngredientList = new HashMap<Integer,Ingredient>();
 	public Map <Integer,Ingredient> toppingIngredientList = new HashMap<Integer,Ingredient>();
 	public Map <Integer,Ingredient> baseIngredientList = new HashMap<Integer,Ingredient>();	
+	
+	
 	public List <String> strInsideIngredient = new ArrayList<String>();
 	public List <String> strOutsideIngredient = new ArrayList<String>();
 	public List <String> strBaseIngredient = new ArrayList<String>();
 	public List <String> strToppingIngredient = new ArrayList<String>();
+	
+	
 	public DB() throws ParserConfigurationException, SAXException, IOException{
 		File fXmlFile = new File("info/Plates.xml");
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
