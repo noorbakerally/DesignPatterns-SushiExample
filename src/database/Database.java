@@ -1,4 +1,4 @@
-package proxy;
+package database;
 
 import ingredient.Ingredient;
 import java.util.List;
@@ -9,6 +9,7 @@ public interface Database {
 	public Ingredient getOutsideIngredient(int id);
 	public Ingredient getToppingIngredient(int id);
 	public Ingredient getBaseIngredient(int id);
+	public String getCustomerStatus(int id);
 	
 	//takes status:the status of the ingredient in the string, are they inside,outside,base,topping
 	//strIngredientList is comma seperated string where each str is an id of an ingredient

@@ -12,8 +12,6 @@
 		<!-- Base Topping Plate having cones -->
 		<plate name="Tuna Nigri" color="violet" structure="BaseTopping" numberOfPieces="2" ingredientIds="6,8"/>
 	</plates>
-	
-	
 	<ingredients>
 		<ingredient id="1" name="Rice" description="V" pricePerUnit="0.7" presence="IOB" region="J"/>
 		<ingredient	id="2" name="Vinegar" description="V"  pricePerUnit="0.2" presence="IS" region="J"/>
@@ -41,4 +39,9 @@
 		<color name="pink" price="4"/>
 		<color name="grey" price="5"/>
 	</colors>
+	<customers>
+		<customer id="1" status="faithful"/>
+		<customer id="1" status="firsttime"/>
+		<customer id="1" status="usual"/>
+	</customers>	
 </sushidetails>

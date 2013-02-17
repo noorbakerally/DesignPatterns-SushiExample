@@ -1,7 +1,7 @@
 package controller;
+import database.Database;
 import piece.Cone;
-import piece.Piece;import proxy.Database;
-import view.PieceView;
+import piece.Piece;import view.PieceView;
 public class ConeController extends PieceControlHandler{
 	View view;
 	Database db;

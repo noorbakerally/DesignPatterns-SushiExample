@@ -1,6 +1,7 @@
 package controller;
+import database.Database;
 import piece.Piece;
-import piece.Roll;import proxy.Database;import view.PieceView;
+import piece.Roll;import view.PieceView;
 public class RollController extends PieceControlHandler{
 	View view;
 	Database db;

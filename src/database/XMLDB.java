@@ -1,6 +1,7 @@
-package proxy;
+package database;
 
-import ingredient.CompositeIngredient;import ingredient.Ingredient;import ingredient.SimpleIngredientFactory;import java.io.File;import java.io.IOException;import java.util.ArrayList;import java.util.HashMap;import java.util.List;import java.util.Map;import javax.xml.parsers.DocumentBuilder;import javax.xml.parsers.DocumentBuilderFactory;import javax.xml.parsers.ParserConfigurationException;import org.w3c.dom.Document;import org.w3c.dom.Node;import org.w3c.dom.NodeList;import org.xml.sax.SAXException;public class XMLDB implements Database {
+import ingredient.CompositeIngredient;import ingredient.Ingredient;import ingredient.SimpleIngredientFactory;import java.io.File;import java.io.IOException;import java.util.ArrayList;import java.util.HashMap;import java.util.List;import java.util.Map;import javax.xml.parsers.DocumentBuilder;import javax.xml.parsers.DocumentBuilderFactory;import javax.xml.parsers.ParserConfigurationException;import org.w3c.dom.Document;import org.w3c.dom.Node;import org.w3c.dom.NodeList;import org.xml.sax.SAXException;
+public class XMLDB implements Database {
 	
 	public Document db;
 	public List <Ingredient> ingredientList = new ArrayList <Ingredient> ();
@@ -9,7 +10,7 @@ import ingredient.CompositeIngredient;import ingredient.Ingredient;import ingred
 	public Map <Integer,Ingredient> outsideIngredientList = new HashMap<Integer,Ingredient>();
 	public Map <Integer,Ingredient> toppingIngredientList = new HashMap<Integer,Ingredient>();
 	public Map <Integer,Ingredient> baseIngredientList = new HashMap<Integer,Ingredient>();	
-	
+	public Map <Integer,Customer> customerList = new HashMap<Integer,Customer>();	
 	
 	public List <String> strInsideIngredient = new ArrayList<String>();
 	public List <String> strOutsideIngredient = new ArrayList<String>();
@@ -23,6 +24,7 @@ import ingredient.CompositeIngredient;import ingredient.Ingredient;import ingred
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		db = dBuilder.parse(fXmlFile);
 		generateIngredient();
+		generateCustomers();
 	}
 	public List <Ingredient> getSauceList(){
 		return sauceList;
@@ -94,7 +96,19 @@ import ingredient.CompositeIngredient;import ingredient.Ingredient;import ingred
 			}
 		}
 	}
-	 public List <Ingredient> getAllSelectedIngredient(int Status,String [] selectedIngredient){
+	void generateCustomers(){
+		NodeList customers = db.getElementsByTagName("customers").item(0).getChildNodes();
+		for(int i=0; i<customers.getLength(); i++){
+			  if (customers.item(i).getNodeType() == Node.ELEMENT_NODE) {
+		          // do something with the current element
+				  Node currentCustomer = customers.item(i);
+				  int id = Integer.valueOf(currentCustomer.getAttributes().getNamedItem("id").getNodeValue());
+				  String status = currentCustomer.getAttributes().getNamedItem("status").getNodeValue();
+				  customerList.put(id, new Customer(id, status));
+			  }
+		}
+	}
+	public List <Ingredient> getAllSelectedIngredient(int Status,String [] selectedIngredient){
 			List <Ingredient> selectedIngredientList = new ArrayList <Ingredient> ();
 			if (Status ==1){ 
 				for (String ingredientStr:selectedIngredient){
@@ -142,5 +156,10 @@ import ingredient.CompositeIngredient;import ingredient.Ingredient;import ingred
 	}
 	public List<String> getStrToppingIngredient() {
 		return strToppingIngredient;
+	}
+	
+	@Override
+	public String getCustomerStatus(int id) {
+		return customerList.get(id).getStatus();
 	}
 }

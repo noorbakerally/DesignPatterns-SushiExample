@@ -1,7 +1,7 @@
 package controller;
+import database.Database;
 import piece.BaseTopping;
 import piece.Piece;
-import proxy.Database;
 import view.PieceView;
 public class BaseToppingController extends PieceControlHandler{
 	View view;

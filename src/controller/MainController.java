@@ -1,6 +1,8 @@
 package controller;
 import java.io.IOException;
-import java.util.List;import javax.xml.parsers.ParserConfigurationException;import org.xml.sax.SAXException;import piece.Piece;import plate.Plate;import proxy.Database;import store.*;
+import java.util.List;import javax.xml.parsers.ParserConfigurationException;import org.xml.sax.SAXException;
+import database.Database;
+import piece.Piece;import plate.Plate;import store.*;
 public class MainController {
 	SushiStore sushiStore;Database db;int plateFranchise;int numberOfPieces;View view;PieceControlHandler handler;
 	public interface View{

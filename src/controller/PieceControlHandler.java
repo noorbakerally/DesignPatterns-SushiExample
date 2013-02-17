@@ -1,6 +1,6 @@
 package controller;
+import database.Database;
 import piece.Piece;
-import proxy.Database;
 public abstract class PieceControlHandler {
 	public static int ROLL = 1;
     public static int CONE = 2;
