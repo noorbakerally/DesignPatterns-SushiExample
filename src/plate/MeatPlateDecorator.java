@@ -15,7 +15,7 @@ public class MeatPlateDecorator extends PlateDecorator{
 	public String toString(){
 		String objStr = "";
 		objStr = "Vegeterian:"+(isVegeterian()? "Plate is Vegeterian\n":"Plate is not Vegeterian\n");
-		objStr += "Price:£"+getPrice()+"\n";
+		//objStr += "Price:£"+getPrice()+"\n";
 		return decoratedPlate.toString()+objStr;
 	}
 	public float getPrice(){

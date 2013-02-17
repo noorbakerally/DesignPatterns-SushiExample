@@ -6,11 +6,12 @@ import piece.Piece;import plate.Plate;import store.*;
 public class MainController {
 	SushiStore sushiStore;Database db;int plateFranchise;int numberOfPieces;View view;PieceControlHandler handler;
 	public interface View{
+		int getCustomerId();
 		int getPlateFranchise();
 		int getPlateDecorator();
 		int getNumberOfPieces();
 		int getPieceType(int pieceNumber);
-		void showPlate(Plate plate);
+		void showPlate(String plateDetails);
 		String[] getIngredient(String ingredientTypeTitle,List <String> ingredient);
 	}
 	public MainController(Database db,View view) throws ParserConfigurationException, SAXException, IOException{
@@ -22,6 +23,7 @@ public class MainController {
 	void launch(){
 		plateFranchise = view.getPlateFranchise();
 		sushiStore = SimpleStoreFactory.createSushiStore(plateFranchise, db.getSauceList());
+		sushiStore.setCurrentCustomer(db.getCustomer(view.getCustomerId())); //getting the customer
 		numberOfPieces = view.getNumberOfPieces();
 		int currentPieceType;
 		for  (int pieceCounter=1;pieceCounter<=numberOfPieces;pieceCounter++){
@@ -31,7 +33,7 @@ public class MainController {
 		}
 		
 		sushiStore.decoratePlate(view.getPlateDecorator());
-		view.showPlate(sushiStore.getPlate());
+		view.showPlate(sushiStore.getPlateDetails());
 	}
 	//setting the control chain
 	PieceControlHandler createPieceControlChain(){

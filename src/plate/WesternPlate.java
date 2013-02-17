@@ -23,7 +23,7 @@ public class WesternPlate extends Plate {
 		}
 		objStr += "\n";
 		objStr += "Vegeterian:"+(isVegeterian()? "Plate is Vegeterian\n":"Plate is not Vegeterian\n");
-		objStr += "Price:£"+getPrice()+"\n";
+		//objStr += "Price:£"+getPrice()+"\n";
 		return objStr;
 	}
 

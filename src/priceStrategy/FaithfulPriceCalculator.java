@@ -9,5 +9,4 @@ public class FaithfulPriceCalculator implements PriceCalculator{
 		//reason why the method is parametrized with customer object
 		return (float) (currentCost*0.7);
 	}
-
 }

@@ -20,8 +20,8 @@ public class MainView implements MainController.View{
 		return Integer.valueOf(helpers.getChoice("SELECT TYPE OF PIECE "+pieceNumber,new ArrayList <String> (){{add("Roll");add("Hand Roll(Cone)");add("Base with Topping");}}));
 	}
 	@Override
-	public void showPlate(Plate plate) {
-		System.out.println(plate.toString());
+	public void showPlate(String plateDetails) {
+		System.out.println(plateDetails);
 	}
 	public String[] getIngredient(String ingredientType,List <String> ingredient){
 		return helpers.getChoice("Enter "+ingredientType+" ingredient:",ingredient).split(",");
@@ -29,5 +29,10 @@ public class MainView implements MainController.View{
 	@Override
 	public int getPlateDecorator() {
 		return Integer.valueOf(helpers.getChoice("Select Plate decorator:",new ArrayList<String>() {{add("Decorate with tomato");add("Decorate with meat");add("No Decorator"); }}));
+	}
+	@Override
+	public int getCustomerId() {
+		System.out.print("Enter customer id:");
+		return in.nextInt();
 	}
 }

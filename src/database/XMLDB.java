@@ -159,7 +159,7 @@ public class XMLDB implements Database {
 	}
 	
 	@Override
-	public String getCustomerStatus(int id) {
-		return customerList.get(id).getStatus();
+	public Customer getCustomer(int id) {
+		return customerList.get(id);
 	}
 }
